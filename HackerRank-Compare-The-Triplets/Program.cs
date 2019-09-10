@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace HackerRank_Compare_The_Triplets
 {
@@ -22,7 +24,22 @@ namespace HackerRank_Compare_The_Triplets
 
             static void Main(string[] args)
         {
-            
+            TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+            //For the user to input the first integer element into the console
+            List<int> a = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(aTemp => Convert.ToInt32(aTemp)).ToList();
+
+            //For the user to input the second integer element into the console
+            List<int> b = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(bTemp => Convert.ToInt32(bTemp)).ToList();
+
+            //Prints out the score comparisons
+            List<int> result = CompareTriplets(a, b);
+
+            //Prints out the final result between the two elements
+            textWriter.WriteLine(String.Join(" ", result));
+
+            textWriter.Flush();
+            textWriter.Close();
         }
     }
 }
