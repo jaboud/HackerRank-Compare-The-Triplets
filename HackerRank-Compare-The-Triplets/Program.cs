@@ -10,6 +10,12 @@ namespace HackerRank_Compare_The_Triplets
             //List of integers to store the scores. Scores set to 0 at default
             List<int> scores = new List<int>() { 0, 0 };
 
+            //For loop to see if one element is greater than the other. Program will increment score if this is the case.
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (a[i] > b[i]) scores[0]++;
+                else if (a[i] < b[i]) scores[1]++;
+            }
 
             return scores;
         }
