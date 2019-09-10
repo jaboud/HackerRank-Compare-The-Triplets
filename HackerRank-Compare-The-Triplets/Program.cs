@@ -40,6 +40,9 @@ namespace HackerRank_Compare_The_Triplets
 
             textWriter.Flush();
             textWriter.Close();
+
+            //To prevent the console from automatically closing upon completion of program
+            Console.Read();
         }
     }
 }
